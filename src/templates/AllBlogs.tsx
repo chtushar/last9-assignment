@@ -16,6 +16,7 @@ const AllBlogs = ({ pageContext }) => {
                 <div className='grid grid-cols-1 md:grid-cols-2 grid-flows-row gap-4 mt-10'>
                     {allBlogs.map(({  node }) => (
                         <BlogCard 
+                            key={node.id}
                             title={node.title}
                             slug={node.slug}
                             author={node.primary_author.name}
