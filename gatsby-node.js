@@ -21,6 +21,7 @@ exports.createPages = async ({ actions, graphql }) => {
             id
             slug
             title
+            html
             primary_author {
               name
               twitter
@@ -47,7 +48,7 @@ exports.createPages = async ({ actions, graphql }) => {
       path: `/blogs/${node.slug}`,
       component: blogTemplate,
       context: {
-        slug: node.slug,
+        node
       },
       defer: true,
     })
